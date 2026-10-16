@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Qeydiyyat - Əkinçi 2.0</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Əkinçi 2.0">
+  <meta property="og:title" content="Qeydiyyat - Əkinçi 2.0">
+  <meta property="og:description" content="Azad edilmiş ərazilərdə kənd təsərrüfatı təyinatlı torpaqlar üzrə investisiya müsabiqələri: xəritə, peyk monitorinqi, fəaliyyət planı və elektron müraciət.">
+  <meta property="og:image" content="https://aqrohacathon-production.up.railway.app/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script src="/js/lang-boot.js"></script>
+  <link rel="icon" href="/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<main class="auth-wrap">
+  <div class="auth-art">
+    <h2 id="artTitle">Hesab yaradın</h2>
+    <p>Azad edilmiş ərazilərdə torpağı yalnız dövlət verir: Kənd Təsərrüfatı Nazirliyi müsabiqə elan edir, dövlət qurumlarından ibarət komissiya qalibi seçir, torpaq icarəyə verilir. Platforma müraciət edən tərəfləri, yəni sahibkarı, investoru, yerli sakini və alıcını bu prosesə hazırlayır və bir-biri ilə birləşdirir.</p>
+    <ul>
+      <li><svg class="i"><use href="/img/icons.svg#i-user"></use></svg><span><b>Fiziki şəxs:</b> Azərbaycan vətəndaşı, fərdi sahibkar və ya rayonun keçmiş sakini. FİN kod və ya mygov ID ilə</span></li>
+      <li><svg class="i"><use href="/img/icons.svg#i-building-2"></use></svg><span><b>Hüquqi şəxs:</b> MMC, ASC və digər şirkətlər. VÖEN və səlahiyyətli nümayəndə ilə</span></li>
+      <li><svg class="i"><use href="/img/icons.svg#i-globe"></use></svg><span><b>Xarici vətəndaş:</b> xarici investor, pasport məlumatı ilə. İcarə hüququ var, torpaq mülkiyyətə verilmir</span></li>
+    </ul>
+  </div>
+  <div class="auth-form">
+    <div class="card card-pad">
+      <h2 style="margin-bottom:4px" id="formTitle">Qeydiyyat</h2>
+      <p class="muted small" id="formSub">Artıq hesabınız var? <a href="/giris.html">Daxil olun</a></p>
+      <a class="btn btn-block mygov-btn mygov-lg" href="/mygov-id.html" id="mygovReg"><span class="mygov-word">mygov<i></i>ID</span><span>ilə sürətli qeydiyyat</span></a>
+      <div class="auth-or" id="orLine"><span>və ya formanı doldurun</span></div>
+      <form id="form" novalidate>
+        <div class="field"><label>1. Hüquqi statusunuz</label>
+          <div class="acct-types three" id="legalTypes">
+            <label class="acct-type"><input type="radio" name="legalType" value="INDIVIDUAL" checked><span><b>Fiziki şəxs</b><small>Vətəndaş, fərdi sahibkar, yerli sakin</small></span></label>
+            <label class="acct-type"><input type="radio" name="legalType" value="COMPANY"><span><b>Hüquqi şəxs</b><small>Şirkət: MMC, ASC, kooperativ</small></span></label>
+            <label class="acct-type" id="foreignType"><input type="radio" name="legalType" value="FOREIGN"><span><b>Xarici vətəndaş</b><small>Xarici investor, pasport ilə</small></span></label>
+          </div>
+        </div>
+        <div class="field"><label>2. Platformada məqsədiniz</label>
+          <div class="acct-types three">
+            <label class="acct-type"><input type="radio" name="accountType" value="INVESTOR" checked><span><b>İnvestor</b><small>Vəsaitim var, layihəyə və ya müsabiqəyə qoymaq istəyirəm</small></span></label>
+            <label class="acct-type"><input type="radio" name="accountType" value="ENTREPRENEUR"><span><b>Sahibkar</b><small>Layihəm var, müsabiqəyə müraciət edirəm, tərəfdaş axtarıram</small></span></label>
+            <label class="acct-type"><input type="radio" name="accountType" value="BUYER"><span><b>Alıcı</b><small>Emal, ixrac, şəbəkə: məhsul almaq istəyirəm</small></span></label>
+          </div>
+        </div>
+
+        <div id="baseFields">
+          <div class="lg lg-COMPANY" hidden>
+            <div class="form-grid">
+              <div class="field"><label class="req" for="companyName">Şirkətin adı</label><input class="input" id="companyName" name="legal.companyName" maxlength="200" placeholder="məs. Qarabağ Aqro MMC"></div>
+              <div class="field"><label for="companyForm">Təşkilati-hüquqi forma</label><select class="input" id="companyForm" name="legal.companyForm"><option value="MMC">MMC</option><option value="ASC">ASC</option><option value="QSC">QSC</option><option value="Kooperativ">Kooperativ</option><option value="Digər">Digər</option></select></div>
+            </div>
+            <div class="form-grid">
+              <div class="field"><label class="req" for="voenC">VÖEN</label><input class="input mono" id="voenC" name="legal.voen" maxlength="10" inputmode="numeric" placeholder="10 rəqəm"></div>
+              <div class="field"><label for="repPosition">Nümayəndənin vəzifəsi</label><input class="input" id="repPosition" name="legal.repPosition" maxlength="120" placeholder="məs. Direktor"></div>
+            </div>
+          </div>
+          <div class="field"><label class="req" for="fullName" id="nameLabel">Ad və soyad</label><input class="input" id="fullName" name="fullName" autocomplete="name" required></div>
+          <div class="field"><label class="req" for="email">E-poçt</label><input class="input" id="email" name="email" type="email" autocomplete="email" required></div>
+          <div class="form-grid">
+            <div class="field"><label for="phone">Telefon</label><input class="input" id="phone" name="phone" placeholder="+994 50 000 00 00" autocomplete="tel"></div>
+            <div class="field lg lg-INDIVIDUAL lg-COMPANY"><label for="fin" id="finLabel" class="req">FİN kod</label><input class="input mono" id="fin" name="fin" maxlength="7" placeholder="7 simvol"></div>
+            <div class="field lg lg-FOREIGN" hidden><label class="req" for="citizenship">Vətəndaşlıq</label><input class="input" id="citizenship" name="legal.citizenship" list="countries" maxlength="60" placeholder="məs. Türkiyə"></div>
+          </div>
+          <div class="lg lg-FOREIGN" hidden>
+            <div class="form-grid">
+              <div class="field"><label class="req" for="passportNo">Pasport nömrəsi</label><input class="input mono" id="passportNo" name="legal.passportNo" maxlength="20" placeholder="məs. U18427639"></div>
+              <div class="field"><label for="foreignCompany">Şirkət (varsa)</label><input class="input" id="foreignCompany" name="legal.foreignCompany" maxlength="200" placeholder="məs. Kaya Bağcılık A.Ş."></div>
+            </div>
+            <div class="field"><label for="prefLang">Ünsiyyət dili</label><div class="seg" id="prefLang"><button type="button" data-v="en" class="active">English</button><button type="button" data-v="ru">Русский</button><button type="button" data-v="az">Azərbaycan</button></div></div>
+            <p class="small muted" style="margin:-4px 0 12px">Xarici vətəndaşlar torpağı mülkiyyətə ala bilməz, müsabiqə ilə icarəyə götürə bilər. Pasportun notarial təsdiqli tərcüməsi müraciət mərhələsində yüklənir.</p>
+          </div>
+          <div class="lg lg-INDIVIDUAL">
+            <label class="check" style="margin-bottom:10px"><input type="checkbox" id="localResident"><span><b>Yerli sakinəm</b>: bu rayonun keçmiş sakiniyəm (qayıdan ailə)</span></label>
+            <div class="field" id="homeDistrictField" hidden><label for="homeDistrict">Hansı rayondan?</label><select class="input" id="homeDistrict" name="legal.homeDistrict"><option value="">Seçin</option></select></div>
+            <div class="field"><label for="voenI">Fərdi sahibkar VÖEN-i (varsa)</label><input class="input mono" id="voenI" name="legal.voenI" maxlength="10" inputmode="numeric" placeholder="10 rəqəm"></div>
+          </div>
+        </div>
+        <datalist id="countries"><option value="Türkiyə"><option value="Rusiya Federasiyası"><option value="Gürcüstan"><option value="Qazaxıstan"><option value="Özbəkistan"><option value="Almaniya"><option value="Birləşmiş Ərəb Əmirlikləri"><option value="Böyük Britaniya"><option value="Amerika Birləşmiş Ştatları"><option value="İsrail"><option value="İtaliya"><option value="Fransa"><option value="Çin"><option value="Ukrayna"></datalist>
+
+        <fieldset class="type-box" data-type="INVESTOR">
+          <legend>İnvestor profili</legend>
+          <div class="form-grid">
+            <div class="field"><label for="invMin">Minimum məbləğ</label><div class="money-input"><input class="input num" id="invMin" inputmode="numeric" autocomplete="off" placeholder="100 000"><span>₼</span></div></div>
+            <div class="field"><label for="invMax">Maksimum məbləğ</label><div class="money-input"><input class="input num" id="invMax" inputmode="numeric" autocomplete="off" placeholder="1 000 000"><span>₼</span></div></div>
+          </div>
+          <div class="field"><label>Maraqlandığınız istiqamətlər</label><div class="row-wrap reg-chips" id="invSectors"></div></div>
+          <div class="field"><label>Risk iştahı</label><div class="seg" id="invRisk"><button type="button" data-v="LOW">Aşağı</button><button type="button" data-v="MID" class="active">Orta</button><button type="button" data-v="HIGH">Yüksək</button></div></div>
+        </fieldset>
+
+        <fieldset class="type-box" data-type="ENTREPRENEUR" hidden>
+          <legend>Sahibkar profili</legend>
+          <div class="form-grid">
+            <div class="field"><label for="entDistrict">Rayon</label><select class="input" id="entDistrict"><option value="">Seçin</option></select></div>
+            <div class="field"><label for="entSector">İdeyanın istiqaməti</label><select class="input" id="entSector"><option value="">Seçin</option></select></div>
+          </div>
+          <div class="field"><label>Torpaq vəziyyəti</label>
+            <div class="seg seg-wrap" id="entLand"><button type="button" data-v="APPLYING" class="active">Müsabiqəyə müraciət edirəm</button><button type="button" data-v="LEASED">Müsabiqə qalibiyəm (icarə)</button><button type="button" data-v="NONE">Hələ sahə seçməmişəm</button></div>
+            <div class="hint">Torpaq dövlətindir və yalnız müsabiqə ilə icarəyə verilir</div>
+          </div>
+          <div class="form-grid">
+            <div class="field"><label for="entHa">Sahə (ha)</label><input class="input num" id="entHa" type="number" min="0" step="0.5" placeholder="məs. 40"></div>
+            <div class="field"><label for="entNeed">Lazım olan investisiya</label><div class="money-input"><input class="input num" id="entNeed" inputmode="numeric" autocomplete="off" placeholder="500 000"><span>₼</span></div></div>
+          </div>
+          <div class="field"><label for="entIdea">İdeyanız bir cümlə ilə</label><input class="input" id="entIdea" maxlength="400" placeholder="məs. 40 ha intensiv nar bağı, məhsul ixraca"></div>
+        </fieldset>
+
+        <div id="pwField" class="field"><label class="req" for="password">Şifrə</label><input class="input" id="password" name="password" type="password" autocomplete="new-password" required><div class="hint">Ən azı 8 simvol, hərf və rəqəm</div></div>
+        <label class="check" style="margin-bottom:16px" id="consentRow"><input type="checkbox" id="consent" name="consent"><span>"Fərdi məlumatlar haqqında" Qanuna uyğun olaraq şəxsi məlumatlarımın müsabiqə məqsədilə emalına razıyam.</span></label>
+        <div id="err"></div>
+        <button class="btn btn-primary btn-lg btn-block" type="submit" data-loading="Yaradılır..." id="submitBtn">Hesab yarat</button>
+      </form>
+    </div>
+  </div>
+</main>
+<script type="module" src="/js/pages/register.js"></script>
+</body>
+</html>

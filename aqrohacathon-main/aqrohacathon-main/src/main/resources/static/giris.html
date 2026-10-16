@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daxil ol - Əkinçi 2.0</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Əkinçi 2.0">
+  <meta property="og:title" content="Daxil ol - Əkinçi 2.0">
+  <meta property="og:description" content="Azad edilmiş ərazilərdə kənd təsərrüfatı təyinatlı torpaqlar üzrə investisiya müsabiqələri: xəritə, peyk monitorinqi, fəaliyyət planı və elektron müraciət.">
+  <meta property="og:image" content="https://aqrohacathon-production.up.railway.app/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script src="/js/lang-boot.js"></script>
+  <link rel="icon" href="/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<main class="auth-wrap">
+  <div class="auth-art">
+    <h2>Xoş gəlmisiniz!</h2>
+    <p>Şəxsi kabinetinizdə müraciətlərinizi idarə edin, sənədləri yükləyin və statusu real vaxtda izləyin.</p>
+    <ul>
+      <li><svg class="i"><use href="/img/icons.svg#i-shield-check"></use></svg>JWT əsaslı təhlükəsiz sessiya, rol əsaslı giriş</li>
+      <li><svg class="i"><use href="/img/icons.svg#i-bell"></use></svg>Statusun hər dəyişməsində bildiriş</li>
+      <li><svg class="i"><use href="/img/icons.svg#i-fingerprint"></use></svg>mygov ID ilə giriş: QR kodu telefonla skan edin, şifrə lazım deyil</li>
+    </ul>
+  </div>
+  <div class="auth-form">
+    <div class="card card-pad">
+      <h2 style="margin-bottom:4px">Daxil ol</h2>
+      <p class="muted small">Hesabınız yoxdur? <a href="/qeydiyyat.html">Qeydiyyatdan keçin</a></p>
+      <a class="btn btn-block mygov-btn mygov-lg" href="/mygov-id.html" id="mygovLogin"><span class="mygov-word">mygov<i></i>ID</span><span>ilə daxil ol</span></a>
+      <div class="auth-or"><span>və ya e-poçt ilə</span></div>
+      <form id="form" novalidate>
+        <div class="field"><label for="email">E-poçt</label><input class="input" id="email" name="email" type="email" autocomplete="username" required></div>
+        <div class="field"><label for="password">Şifrə</label><input class="input" id="password" name="password" type="password" autocomplete="current-password" required></div>
+        <div id="err"></div>
+        <button class="btn btn-primary btn-lg btn-block" type="submit" data-loading="Yoxlanılır...">Daxil ol</button>
+      </form>
+      <hr>
+      <p class="small" style="font-weight:650;margin-bottom:8px">Demo hesablar (münsiflər üçün - bir kliklə daxil olun)</p>
+      <div class="demo-accounts" id="demo"></div>
+    </div>
+  </div>
+</main>
+<script type="module" src="/js/pages/login.js"></script>
+</body>
+</html>

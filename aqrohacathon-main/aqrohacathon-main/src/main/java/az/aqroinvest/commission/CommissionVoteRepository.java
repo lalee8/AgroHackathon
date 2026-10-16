@@ -1,0 +1,15 @@
+package az.aqroinvest.commission;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
+
+public interface CommissionVoteRepository extends JpaRepository<CommissionVote, Long> {
+    List<CommissionVote> findByApplicationId(Long applicationId);
+
+    List<CommissionVote> findByApplicationIdIn(Collection<Long> applicationIds);
+
+    Optional<CommissionVote> findByApplicationIdAndMemberId(Long applicationId, Long memberId);
+}

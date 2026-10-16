@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mənə uyğun sahə - Əkinçi 2.0</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Əkinçi 2.0">
+  <meta property="og:title" content="Mənə uyğun sahə - Əkinçi 2.0">
+  <meta property="og:description" content="Azad edilmiş ərazilərdə kənd təsərrüfatı təyinatlı torpaqlar üzrə investisiya müsabiqələri: xəritə, peyk monitorinqi, fəaliyyət planı və elektron müraciət.">
+  <meta property="og:image" content="https://aqrohacathon-production.up.railway.app/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script src="/js/lang-boot.js"></script>
+  <link rel="icon" href="/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<main>
+  <section class="page-head page-head-sm"><div class="container">
+    <div class="crumbs"><a href="/index.html">Ana səhifə</a> / Ağıllı tövsiyə</div>
+    <h1>Mənə uyğun sahəni tap</h1>
+    <p>Hazır profili seçin və ya büdcə və istiqaməti dəqiqləşdirin: hər sahə 100 ballıq izahlı uyğunluq balı alır.</p>
+  </div></section>
+  <section class="section-sm">
+    <div class="container wizard-layout match-layout">
+      <form class="card card-pad match-form" id="form">
+        <h3 style="margin:0 0 10px">İnvestor profili</h3>
+        <div class="mt-presets" id="presets" role="group" aria-label="Hazır profillər"></div>
+        <div class="field"><label for="budgetNum">İnvestisiya büdcəsi</label>
+          <div class="budget-row"><input type="range" id="budget" min="50000" max="6000000" step="50000" value="1500000" aria-label="Büdcə slayderi"><div class="money-input"><input class="input num" id="budgetNum" type="text" inputmode="numeric" autocomplete="off"><span>₼</span></div></div>
+        </div>
+        <div class="field"><label>Fəaliyyət istiqaməti <span class="muted small">(bir neçəsini seçə bilərsiniz)</span></label><div class="row-wrap mt-chips" id="cats"></div></div>
+        <div class="field mt-need"><label>Mütləqdir:</label><div class="row-wrap mt-chips"><button type="button" class="chip chip-tg" data-need="irr" aria-pressed="false"><svg class="i i-sm"><use href="/img/icons.svg#i-droplets"></use></svg>Suvarma</button><button type="button" class="chip chip-tg" data-need="elec" aria-pressed="false"><svg class="i i-sm"><use href="/img/icons.svg#i-zap"></use></svg>Elektrik xətti</button></div></div>
+        <details class="mt-more"><summary><span>Sahənin ölçüsü və rayon</span><span class="small muted" id="distCount">istənilən</span></summary>
+          <div class="form-grid">
+            <div class="field"><label for="minArea">Min. sahə (ha)</label><input class="input" type="number" id="minArea" min="0" placeholder="məs. 20"></div>
+            <div class="field"><label for="maxArea">Maks. sahə (ha)</label><input class="input" type="number" id="maxArea" min="0" placeholder="məs. 300"></div>
+          </div>
+          <div class="small muted" style="margin-bottom:6px;font-weight:600">Üstünlük verilən rayonlar</div>
+          <div class="row-wrap mt-chips" id="districts"></div>
+        </details>
+        <div class="mt-submit">
+          <button class="btn btn-primary btn-block btn-lg" type="submit" id="go"><svg class="i"><use href="/img/icons.svg#i-sparkles"></use></svg><span id="goLbl">Uyğun sahələri göstər</span></button>
+          <div class="small muted mt-hint" id="goHint" aria-live="polite"></div>
+        </div>
+      </form>
+      <div id="results"><div class="card card-pad empty"><svg class="i"><use href="/img/icons.svg#i-target"></use></svg><div>Profilinizi doldurun və "Uyğun sahələri tap" düyməsini basın</div></div></div>
+    </div>
+  </section>
+</main>
+<script type="module" src="/js/pages/match.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Layihələr: sahibkar və investor - Əkinçi 2.0</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Əkinçi 2.0">
+  <meta property="og:title" content="Layihələr: sahibkar və investor - Əkinçi 2.0">
+  <meta property="og:description" content="Azad edilmiş ərazilərdə kənd təsərrüfatı təyinatlı torpaqlar üzrə investisiya müsabiqələri: xəritə, peyk monitorinqi, fəaliyyət planı və elektron müraciət.">
+  <meta property="og:image" content="https://aqrohacathon-production.up.railway.app/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script src="/js/lang-boot.js"></script>
+  <link rel="icon" href="/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<main>
+  <section class="mk-hero"><div class="container">
+    <div class="crumbs"><a href="/index.html">Ana səhifə</a> / Layihələr</div>
+    <span class="overline" style="color:#f3d27a">Sahibkar ↔ investor</span>
+    <h1>İdeyası olan sahibkarı pulu olan investorla birləşdiririk</h1>
+    <p>Sahibkar layihəsini rəqəmlərlə təqdim edir, platforma iddiaları regional göstəricilər və 1500 ssenarilik simulyasiya ilə yoxlayır, sonra təklifi investorun dilinə çevirir: "siz nə qoyursunuz, nə vaxt və nə qədər geri alırsınız".</p>
+    <div class="row-wrap" style="gap:10px">
+      <a class="btn btn-gold" href="/layihe-yeni.html"><svg class="i"><use href="/img/icons.svg#i-plus"></use></svg>Layihəmi təqdim et</a>
+      <a class="btn btn-onhero" href="#profile"><svg class="i"><use href="/img/icons.svg#i-target"></use></svg>Mənə uyğun layihələr</a>
+    </div>
+  </div></section>
+  <section class="section-sm">
+    <div class="container stack">
+      <div class="demo-note" role="note"><svg class="i i-sm"><use href="/img/icons.svg#i-info"></use></svg><span><b>Demo məlumat:</b> layihələr və sahibkarlar nümunədir, rəqəmlər isə platformanın real hesablama mühərrikindən keçir (reallıq yoxlaması, 1500 ssenari).</span></div>
+      <div>
+        <h3 style="margin:0 0 4px">Hansı istiqamətə investisiya etmək istəyirsiniz?</h3>
+        <p class="small muted" style="margin:0 0 12px">İstiqaməti seçin: hər xanada investor axtaran layihələrin sayı və ümumi tələb göstərilir.</p>
+        <div class="sector-tiles" id="sectors"><div class="loader"></div></div>
+      </div>
+      <div class="mk-layout">
+        <aside class="card card-pad mk-side" id="profile" style="scroll-margin-top:90px">
+          <h4 style="margin:0 0 4px">İnvestor profilim</h4>
+          <p class="small muted" style="margin:0 0 12px">Sistem hər layihəni profilinizlə müqayisə edib uyğunluq faizi verir.</p>
+          <div class="field"><label>İstiqamətlər</label><div class="row-wrap" id="pfSectors" style="gap:6px"></div></div>
+          <div class="form-grid">
+            <div class="field"><label for="pfMin">Minimum</label><div class="money-input"><input class="input num" type="text" inputmode="numeric" autocomplete="off" id="pfMin" placeholder="100 000"><span>₼</span></div></div>
+            <div class="field"><label for="pfMax">Maksimum</label><div class="money-input"><input class="input num" type="text" inputmode="numeric" autocomplete="off" id="pfMax" placeholder="2 000 000"><span>₼</span></div></div>
+          </div>
+          <div class="field"><label>Risk iştahı</label><div class="seg" id="pfRisk"><button type="button" data-v="LOW">Aşağı</button><button type="button" data-v="MID" class="active">Orta</button><button type="button" data-v="HIGH">Yüksək</button></div></div>
+          <div class="field"><label>Pulun qayıtması üçün gözləyə bilərəm</label><select class="input" id="pfHorizon"><option value="5">5 il</option><option value="7">7 il</option><option value="10" selected>10 il</option><option value="15">15 il</option><option value="25">25 il</option></select></div>
+          <button class="btn btn-primary btn-block" id="pfApply"><svg class="i"><use href="/img/icons.svg#i-sparkles"></use></svg>Uyğunluğu hesabla</button>
+          <p class="small muted" id="pfNote" style="margin:10px 0 0"></p>
+        </aside>
+        <div class="stack" style="min-width:0">
+          <div class="row between" style="flex-wrap:wrap;gap:10px">
+            <div id="listHead" class="small muted"></div>
+            <div class="row" style="gap:8px"><label class="small muted" for="sort">Sırala:</label><select class="input" id="sort" style="width:auto;min-height:38px;padding:6px 10px"><option value="match">Uyğunluq</option><option value="new">Yeni</option><option value="credibility">Reallıq yoxlaması</option><option value="ask">Məbləğ</option></select></div>
+          </div>
+          <div class="proj-grid" id="list"><div class="loader"></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<script type="module" src="/js/pages/projects.js"></script>
+</body>
+</html>

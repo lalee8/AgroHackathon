@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>İnvestisiya imkanları kataloqu - Əkinçi 2.0</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Əkinçi 2.0">
+  <meta property="og:title" content="İnvestisiya imkanları kataloqu - Əkinçi 2.0">
+  <meta property="og:description" content="Azad edilmiş ərazilərdə kənd təsərrüfatı təyinatlı torpaqlar üzrə investisiya müsabiqələri: xəritə, peyk monitorinqi, fəaliyyət planı və elektron müraciət.">
+  <meta property="og:image" content="https://aqrohacathon-production.up.railway.app/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script src="/js/lang-boot.js"></script>
+  <link rel="icon" href="/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<main>
+  <section class="page-head">
+    <div class="container">
+      <div class="crumbs"><a href="/index.html">Ana səhifə</a> / Kataloq</div>
+      <h1>İnvestisiya imkanları kataloqu</h1>
+      <p>Müsabiqəyə çıxarılan sahələrin ölçüləri, yerləşdiyi ərazi, istifadə şərtləri və son müraciət tarixləri. Müqayisə üçün 4-ə qədər sahə seçin.</p>
+    </div>
+  </section>
+  <section class="section-sm">
+    <div class="container">
+      <div class="filterbar">
+        <div class="row1">
+          <div class="search-input"><svg class="i"><use href="/img/icons.svg#i-search"></use></svg><input class="input" id="q" placeholder="Ad, kod və ya kənd üzrə axtarış"></div>
+          <select class="input" id="district"><option value="">Bütün rayonlar</option></select>
+          <select class="input" id="area"><option value="">İstənilən ölçü</option><option value="0-25">25 ha-ya qədər</option><option value="25-100">25-100 ha</option><option value="100-300">100-300 ha</option><option value="300-">300 ha+</option></select>
+          <select class="input" id="status"><option value="">Bütün statuslar</option><option value="IN_COMPETITION">Müsabiqədə</option><option value="AVAILABLE">Müsabiqəyə hazır</option><option value="AWARDED">İcarəyə verilib</option></select>
+          <select class="input" id="sort">
+            <option value="deadline">Sıralama: son tarix (yaxın)</option><option value="infra">İnfrastruktur (ən hazır)</option>
+            <option value="area_desc">Sahə (böyükdən)</option><option value="area_asc">Sahə (kiçikdən)</option><option value="rent_asc">İcarə haqqı (ucuz)</option>
+            <option value="investment_asc">Min. investisiya (az)</option><option value="quality">Torpaq keyfiyyəti</option><option value="code">Kod üzrə</option>
+          </select>
+        </div>
+        <div class="row-wrap between">
+          <div class="row-wrap" id="catChips"></div>
+          <div class="row-wrap" style="gap:16px">
+            <label class="check"><input type="checkbox" id="irr">Suvarma var</label>
+            <label class="check"><input type="checkbox" id="elec">Elektrik var</label>
+            <label class="check"><input type="checkbox" id="open">Müraciət açıqdır</label>
+          </div>
+        </div>
+      </div>
+      <div class="row between" style="margin:22px 0 14px"><div class="row-wrap" style="gap:10px"><b id="count"></b><button class="btn btn-ghost btn-sm" id="reset" type="button" hidden><svg class="i i-sm"><use href="/img/icons.svg#i-x"></use></svg>Filtrləri sıfırla</button><button class="btn btn-ghost btn-sm" id="share" type="button"><svg class="i i-sm"><use href="/img/icons.svg#i-link"></use></svg>Linki kopyala</button></div><div class="row-wrap"><a class="btn btn-sm" href="/xerite.html"><svg class="i i-sm"><use href="/img/icons.svg#i-map"></use></svg>Xəritədə göstər</a><a class="btn btn-sm" href="/api/v1/plots/geojson" target="_blank" rel="noopener"><svg class="i i-sm"><use href="/img/icons.svg#i-download"></use></svg>GeoJSON</a></div></div>
+      <div class="plot-grid" id="grid"><div class="loader"></div></div>
+    </div>
+  </section>
+</main>
+<script type="module" src="/js/pages/catalog.js"></script>
+</body>
+</html>

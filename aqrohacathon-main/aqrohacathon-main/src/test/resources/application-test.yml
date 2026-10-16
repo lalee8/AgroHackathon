@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:aqroinvest-test;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH;DB_CLOSE_DELAY=-1
+app:
+  ai:
+    # Testlər real AI API-yə müraciət etmir: məsləhətçi oflayn rejimdə yoxlanılır
+    provider: offline
+    api-key: ""
+    gemini:
+      api-key: ""
+  telegram:
+    bot-token: ""
+  portfolio:
+    warmup: false
+  security:
+    # Testlər bir IP-dən çox giriş edir: limit yalnız test mühitində yüksəkdir
+    logins-per-minute: 1000
+  imagery:
+    enabled: false
+    cache-dir: ./target/test-imagery
+  storage:
+    upload-dir: ./target/test-uploads
+  ektis:
+    # Testlər işləyən serverə qoşulmamalıdır: əlçatmaz ünvan → retry məntiqi yoxlanılır
+    base-url: http://127.0.0.1:9/mock/ektis
+    outbox-interval-ms: 3600000
+    mock:
+      failure-rate: 0
+logging:
+  level:
+    az.aqroinvest: WARN

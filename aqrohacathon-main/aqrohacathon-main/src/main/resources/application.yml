@@ -1,0 +1,130 @@
+server:
+  port: ${PORT:8080}
+  compression:
+    enabled: true
+  error:
+    include-message: always
+
+spring:
+  application:
+    name: aqroinvest-qarabag
+  datasource:
+    # Default: sıfır quraşdırma - fayl əsaslı H2 (PostgreSQL rejimində).
+    # Docker / prod: SPRING_PROFILES_ACTIVE=postgres
+    url: ${DB_URL:jdbc:h2:file:./data/aqroinvest;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH;AUTO_SERVER=TRUE}
+    username: ${DB_USER:sa}
+    password: ${DB_PASSWORD:}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc.time_zone: UTC
+  flyway:
+    enabled: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 25MB
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+  h2:
+    console:
+      enabled: false
+
+app:
+  base-url: ${APP_BASE_URL:http://localhost:8080}
+  security:
+    # Prod mühitində mütləq JWT_SECRET mühit dəyişəni ilə əvəz edilməlidir (min. 32 simvol).
+    jwt-secret: ${JWT_SECRET:aqroinvest-qarabag-demo-secret-key-change-me-2026!}
+    jwt-ttl-minutes: ${JWT_TTL_MINUTES:480}
+    max-failed-logins: 5
+    lock-minutes: 15
+  storage:
+    upload-dir: ${UPLOAD_DIR:./data/uploads}
+    allowed-types: application/pdf,image/png,image/jpeg
+  competition:
+    # "Dörd göz" prinsipi: müsabiqəni yaradan admin onu özü təsdiqləyə bilməz.
+    four-eyes: ${FOUR_EYES:true}
+  seed:
+    enabled: ${SEED_DEMO:true}
+  ektis:
+    # Gələcəkdə real EKTİS ünvanı ilə əvəz edilir. Default: portalın daxilindəki EKTİS simulyatoru.
+    base-url: ${EKTIS_BASE_URL:http://localhost:${server.port}/mock/ektis}
+    api-key: ${EKTIS_API_KEY:ektis-demo-api-key-2026}
+    hmac-secret: ${EKTIS_HMAC_SECRET:ektis-hmac-shared-secret-demo}
+    outbox-interval-ms: 5000
+    max-attempts: 6
+    mock:
+      # Retry mexanizmini nümayiş etdirmək üçün simulyator sorğuların bir hissəsini "uğursuz" edir.
+      failure-rate: ${EKTIS_MOCK_FAILURE_RATE:0.15}
+
+  ai:
+    # auto: GEMINI_API_KEY varsa Gemini, ANTHROPIC_API_KEY varsa Claude, heç biri yoxdursa platforma məlumatından oflayn cavab
+    provider: ${AI_PROVIDER:auto}
+    # Claude API açarı (console.anthropic.com)
+    api-key: ${ANTHROPIC_API_KEY:}
+    model: ${AI_MODEL:claude-opus-5-5}
+    effort: ${AI_EFFORT:low}
+    max-tokens: ${AI_MAX_TOKENS:4000}
+    fallbacks: ${AI_FALLBACKS:true}
+    requests-per-minute: ${AI_RPM:20}
+    # Boş: rəsmi Claude API ünvanı (yalnız test üçün dəyişdirilir)
+    base-url: ${AI_BASE_URL:}
+    gemini:
+      # Google AI Studio açarı (aistudio.google.com). Repozitoriyaya yazılmır, yalnız mühit dəyişəni ilə verilir.
+      api-key: ${GEMINI_API_KEY:}
+      model: ${GEMINI_MODEL:gemini-3.8-flash}
+      # Əsas model yüklü (503) və ya əlçatmaz olduqda
+      fallback-model: ${GEMINI_FALLBACK_MODEL:gemini-3.5-flash-lite}
+      # Düşünmə səviyyəsi: low (sürətli cavab), high və ya none
+      thinking: ${GEMINI_THINKING:low}
+      base-url: ${GEMINI_BASE_URL:https://generativelanguage.googleapis.com/v1beta}
+  telegram:
+    # @BotFather ilə yaradılmış bot tokeni. Boşdursa Telegram kanalı söndürülür.
+    bot-token: ${TELEGRAM_BOT_TOKEN:}
+    api-url: ${TELEGRAM_API_URL:https://api.telegram.org}
+  imagery:
+    # Peyk arxivi: Landsat (USGS/NASA, Esri xidməti) və Sentinel-2 (Copernicus, EOX s2cloudless).
+    # Şəkillər və NDVI nəticələri keşlənir; seed sahələri üçün internetsiz paket src/main/resources/imagery-də.
+    enabled: ${IMAGERY_ENABLED:true}
+    cache-dir: ${IMAGERY_CACHE:./data/imagery}
+    landsat-url: https://landsat2.arcgis.com/arcgis/rest/services/Landsat/MS/ImageServer
+    sentinel-wms: https://tiles.maps.eox.at/wms
+    # Son görüntü: Sentinel-2 (AWS açıq məlumatı, Esri "Sentinel-2 Views"), hər gün yenilənir, son 14 ay
+    sentinel-live-url: https://sentinel.arcgis.com/arcgis/rest/services/Sentinel2/ImageServer
+    live-refresh-hours: ${IMAGERY_LIVE_REFRESH_HOURS:12}
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: alpha
+    tags-sorter: alpha
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: never
+
+logging:
+  level:
+    az.aqroinvest: INFO
+    org.hibernate.SQL: WARN
+
+---
+spring:
+  config:
+    activate:
+      on-profile: postgres
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/aqroinvest}
+    username: ${DB_USER:aqroinvest}
+    password: ${DB_PASSWORD:aqroinvest}

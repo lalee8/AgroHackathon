@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Layihə təqdim et - Əkinçi 2.0</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Əkinçi 2.0">
+  <meta property="og:title" content="Layihə təqdim et - Əkinçi 2.0">
+  <meta property="og:description" content="Azad edilmiş ərazilərdə kənd təsərrüfatı təyinatlı torpaqlar üzrə investisiya müsabiqələri: xəritə, peyk monitorinqi, fəaliyyət planı və elektron müraciət.">
+  <meta property="og:image" content="https://aqrohacathon-production.up.railway.app/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script src="/js/lang-boot.js"></script>
+  <link rel="icon" href="/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<main>
+  <section class="page-head"><div class="container">
+    <div class="crumbs"><a href="/index.html">Ana səhifə</a> / <a href="/layiheler.html">Layihələr</a> / Layihə təqdim et</div>
+    <h1 id="pageTitle">İdeyanızı rəqəmlərlə ifadə edin</h1>
+    <p>"Ayda 1 milyon qazanacağam" demək kifayət deyil. Neçə hektar, hansı məhsuldarlıq, hansı qiymət, nə qədər xərc? Rəqəmləri yazdıqca sağda platforma onları regional göstəricilər və 1500 ssenarilik simulyasiya ilə yoxlayır və investorun görəcəyi təklifi göstərir.</p>
+  </div></section>
+  <section class="section-sm">
+    <div class="container mk-layout new-layout">
+      <form class="stack" id="form" novalidate>
+        <div class="card card-pad">
+          <h3 style="margin:0 0 12px">1. İstiqamət və torpaq</h3>
+          <div class="field"><label class="req">İstiqamət</label><div class="sector-tiles" id="sectorPick" style="grid-template-columns:repeat(auto-fill,minmax(130px,1fr))"></div></div>
+          <div class="form-grid">
+            <div class="field" id="plotField"><label>Torpaq sahəsi</label><select class="input" name="plotId" id="plotId"></select><div class="hint" id="plotHint"></div></div>
+            <div class="field"><label>Rayon</label><select class="input" name="district" id="district"></select></div>
+          </div>
+        </div>
+        <div class="card card-pad">
+          <h3 style="margin:0 0 12px">2. İdeya</h3>
+          <div class="field"><label class="req">Layihənin adı</label><input class="input" name="title" maxlength="160" placeholder="məs. Horadiz günəş fermi"></div>
+          <div class="field"><label>Bir cümlə ilə</label><input class="input" name="tagline" maxlength="240" placeholder="İnvestor ilk bunu oxuyacaq"></div>
+          <div class="form-grid">
+            <div class="field"><label>Problem</label><textarea class="input" name="problem" rows="3" placeholder="Hansı ehtiyacı həll edirsiniz?"></textarea></div>
+            <div class="field"><label>Həll</label><textarea class="input" name="solution" rows="3" placeholder="Nə edəcəksiniz?"></textarea></div>
+            <div class="field"><label>Bazar və alıcılar</label><textarea class="input" name="market" rows="3" placeholder="Məhsulu kim alacaq?"></textarea></div>
+            <div class="field"><label>Komanda</label><textarea class="input" name="team" rows="3" placeholder="Təcrübəniz"></textarea></div>
+          </div>
+          <div class="field"><label>Mərhələ</label><select class="input" name="stage"><option value="IDEA">İdeya</option><option value="PLAN" selected>Biznes plan hazırdır</option><option value="LAND">Torpaq təmin olunub</option><option value="OPERATING">Fəaliyyətdədir</option></select></div>
+        </div>
+        <div class="card card-pad">
+          <h3 style="margin:0 0 4px">3. Rəqəmlər</h3>
+          <p class="small muted" style="margin:0 0 12px">Bunlar sizin iddialarınızdır. Platforma onları yoxlayacaq.</p>
+          <div class="form-grid">
+            <div class="field" id="scaleField"><label id="scaleLbl">Miqyas</label><input class="input num" type="number" name="scale" min="0" step="any"></div>
+            <div class="field"><label class="req">Ümumi investisiya (₼)</label><input class="input num" type="number" name="capex" min="1000" step="1000"></div>
+            <div class="field yp"><label id="yieldLbl">Məhsuldarlıq</label><input class="input num" type="number" name="claimedYield" min="0" step="any"></div>
+            <div class="field yp"><label id="priceLbl">Satış qiyməti</label><input class="input num" type="number" name="claimedPrice" min="0" step="any"></div>
+            <div class="field"><label>İllik gəlir (₼)</label><input class="input num" type="number" name="claimedRevenue" min="0" step="1000"></div>
+            <div class="field"><label>İllik xalis mənfəət (₼)</label><input class="input num" type="number" name="claimedProfit" min="0" step="1000"></div>
+            <div class="field"><label>Daimi iş yeri</label><input class="input num" type="number" name="jobs" min="0" step="1"></div>
+          </div>
+        </div>
+        <div class="card card-pad">
+          <h3 style="margin:0 0 12px">4. İnvestora təklif</h3>
+          <div class="field"><label>Təklifin növü</label><div class="seg" id="deal"><button type="button" data-v="EQUITY" class="active">Pay (şirkətdə hissə)</button><button type="button" data-v="LOAN">Borc (faizlə)</button><button type="button" data-v="REVENUE_SHARE">Gəlirdən pay</button></div></div>
+          <div class="form-grid">
+            <div class="field"><label>Öz vəsaitiniz (₼)</label><input class="input num" type="number" name="ownFunds" min="0" step="1000"></div>
+            <div class="field"><label class="req">İnvestordan istənən (₼)</label><input class="input num" type="number" name="askAmount" min="1000" step="1000"></div>
+            <div class="field"><label id="pctLbl">Təklif olunan pay (%)</label><input class="input num" type="number" name="pct" min="0.5" max="100" step="0.5" value="30"></div>
+          </div>
+        </div>
+        <div class="row-wrap" style="gap:10px">
+          <button class="btn btn-primary btn-lg" type="submit" data-publish="1" data-loading="Dərc edilir..."><svg class="i"><use href="/img/icons.svg#i-send"></use></svg>Dərc et</button>
+          <button class="btn btn-lg" type="submit" data-publish="0" data-loading="Saxlanılır...">Qaralama kimi saxla</button>
+        </div>
+        <div id="formErr"></div>
+      </form>
+      <aside class="live-panel stack" id="live"><div class="card card-pad"><p class="muted">Rəqəmləri yazın: yoxlama burada görünəcək.</p></div></aside>
+    </div>
+  </section>
+</main>
+<script type="module" src="/js/pages/project-new.js"></script>
+</body>
+</html>

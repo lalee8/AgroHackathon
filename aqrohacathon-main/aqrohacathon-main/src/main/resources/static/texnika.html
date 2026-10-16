@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Texnika icarəsi - Əkinçi 2.0</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Əkinçi 2.0">
+  <meta property="og:title" content="Texnika icarəsi - Əkinçi 2.0">
+  <meta property="og:description" content="Azad edilmiş ərazilərdə kənd təsərrüfatı təyinatlı torpaqlar üzrə investisiya müsabiqələri: xəritə, peyk monitorinqi, fəaliyyət planı və elektron müraciət.">
+  <meta property="og:image" content="https://aqrohacathon-production.up.railway.app/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script src="/js/lang-boot.js"></script>
+  <link rel="icon" href="/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<main>
+  <section class="mk-hero"><div class="container">
+    <div class="crumbs"><a href="/index.html">Ana səhifə</a> / Texnika icarəsi</div>
+    <span class="overline" style="color:#f3d27a">Torpaq icarəçisi · investor · texnika sahibi</span>
+    <h1>Texnikanı almayın, icarəyə götürün</h1>
+    <p>Taxıl sahəsində ilkin investisiyanın yarısı texnikadır. Traktoru, kombaynı, suvarma sistemini icarəyə götürəndə ilkin xərc düşür, pul daha tez qayıdır. Texnikası olan isə onu mövsümlük icarəyə verib əlavə gəlir qazanır.</p>
+    <div class="row-wrap" style="gap:10px">
+      <button class="btn btn-gold" id="addBtn" type="button"><svg class="i"><use href="/img/icons.svg#i-plus"></use></svg>Texnikamı elan et</button>
+      <a class="btn btn-onhero" href="/sahe.html?id=1#machinery"><svg class="i"><use href="/img/icons.svg#i-percent"></use></svg>Al və ya icarə: hesabla</a>
+    </div>
+  </div></section>
+  <section class="section-sm"><div class="container stack">
+    <div class="demo-note" role="note"><svg class="i i-sm"><use href="/img/icons.svg#i-info"></use></svg><span><b>Demo məlumat:</b> texnika elanları və sahibləri nümunədir; al və ya icarə müqayisəsi isə sahənin real Monte-Carlo modeli ilə hesablanır.</span></div>
+    <div class="kpis" id="eqKpis"></div>
+    <div class="card card-pad">
+      <div class="row between" style="flex-wrap:wrap;gap:10px;margin-bottom:12px">
+        <div class="row-wrap" id="typeChips" style="gap:6px"></div>
+        <div class="row-wrap eq-filters" style="gap:8px"><select class="input" id="district" style="width:auto"><option value="">Bütün rayonlar</option></select><select class="input" id="category" style="width:auto"><option value="">Bütün fəaliyyətlər</option></select></div>
+      </div>
+      <div class="eq-grid" id="eqGrid"><div class="loader"></div></div>
+    </div>
+    <div id="mine" style="scroll-margin-top:90px"></div>
+  </div></section>
+</main>
+<script type="module" src="/js/pages/machinery.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+# AqroInvest Qarabağ - tam stek: PostgreSQL 16 + Spring Boot portal
+# İşə salma:  docker compose up --build   →   http://localhost:8080
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: aqroinvest
+      POSTGRES_USER: aqroinvest
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-aqroinvest}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U aqroinvest -d aqroinvest"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  app:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILES_ACTIVE: postgres
+      DB_URL: jdbc:postgresql://db:5432/aqroinvest
+      DB_USER: aqroinvest
+      DB_PASSWORD: ${DB_PASSWORD:-aqroinvest}
+      JWT_SECRET: ${JWT_SECRET:-change-this-to-a-long-random-secret-in-production-2026}
+      EKTIS_API_KEY: ${EKTIS_API_KEY:-ektis-demo-api-key-2026}
+      EKTIS_HMAC_SECRET: ${EKTIS_HMAC_SECRET:-ektis-hmac-shared-secret-demo}
+      SEED_DEMO: ${SEED_DEMO:-true}
+      UPLOAD_DIR: /app/data/uploads
+    ports:
+      - "8080:8080"
+    volumes:
+      - uploads:/app/data/uploads
+
+volumes:
+  pgdata:
+  uploads:

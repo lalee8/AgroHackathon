@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Əkinçi 2.0 - Aqrar investisiya müsabiqələri portalı</title>
+  <meta name="description" content="İşğaldan azad edilmiş ərazilərdə kənd təsərrüfatı təyinatlı torpaqlara investisiya: xəritə, kataloq, elektron müraciət və statusun izlənməsi.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Əkinçi 2.0">
+  <meta property="og:title" content="Əkinçi 2.0 - Aqrar investisiya müsabiqələri portalı">
+  <meta property="og:description" content="İşğaldan azad edilmiş ərazilərdə kənd təsərrüfatı təyinatlı torpaqlara investisiya: xəritə, kataloq, elektron müraciət və statusun izlənməsi.">
+  <meta property="og:url" content="https://aqrohacathon-production.up.railway.app/">
+  <meta property="og:image" content="https://aqrohacathon-production.up.railway.app/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script src="/js/lang-boot.js"></script>
+  <link rel="icon" href="/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<main>
+  <section class="hero">
+    <div class="container">
+      <div>
+        <span class="eyebrow"><b>YENİ</b> Qarabağ aqrar investisiya müsabiqəsi - 2026 elan edildi</span>
+        <h1>Qarabağın torpağına <em>investisiya</em> - şəffaf, rəqəmsal, sürətli</h1>
+        <p class="lead">Torpağı, investoru, sahibkarı və alıcını bir platformada birləşdiririk. Hər torpağın ən yaxşı istifadəsini, biznesin 10-25 illik ssenarisini və məhsulun alıcısını görün, müsabiqəyə onlayn müraciət edin.</p>
+        <div class="row-wrap">
+          <a class="btn btn-gold btn-lg" href="/xerite.html"><svg class="i" aria-hidden="true"><use href="/img/icons.svg#i-map"></use></svg>Xəritədə kəşf et</a>
+          <a class="btn btn-light btn-lg" href="#tur" data-tour><svg class="i" aria-hidden="true"><use href="/img/icons.svg#i-navigation"></use></svg>Bələdçi tur: 2 dəqiqədə tanış ol</a>
+        </div>
+        <a class="hero-demo" href="/giris.html#demo"><svg class="i i-sm" aria-hidden="true"><use href="/img/icons.svg#i-key-round"></use></svg>Münsiflər üçün: investor, sahibkar, xarici investor və komissiya üzvü kimi bir kliklə daxil olun</a>
+        <div class="hero-stats" id="heroStats"></div>
+      </div>
+      <div class="hero-visual" id="heroVisual"></div>
+    </div>
+  </section>
+
+  <section class="container overlap">
+    <div class="kpis" id="kpis"></div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <div><span class="overline">Necə işləyir</span><h2>Torpağı yalnız dövlət verir, biz müraciət edənləri hazırlayırıq</h2></div>
+        <p>Azad edilmiş ərazilərdə şəxsi torpaq mülkiyyəti yoxdur. Kənd təsərrüfatı təyinatlı torpaq müsabiqə ilə icarəyə verilir, qərarı dövlət qurumlarından ibarət komissiya qəbul edir.</p>
+      </div>
+      <ol class="flow-steps">
+        <li><span class="fs-ico gov"><svg class="i"><use href="/img/icons.svg#i-landmark"></use></svg></span><b>Dövlət müsabiqə elan edir</b><span>Kənd Təsərrüfatı Nazirliyi minadan təmizlənmiş torpağı şərtləri ilə çıxarır</span></li>
+        <li><span class="fs-ico"><svg class="i"><use href="/img/icons.svg#i-users"></use></svg></span><b>Üç növ müraciətçi</b><span>Fiziki şəxs, hüquqi şəxs və xarici vətəndaş: sahibkar, investor, yerli sakin</span></li>
+        <li><span class="fs-ico gov"><svg class="i"><use href="/img/icons.svg#i-gavel"></use></svg></span><b>Komissiya qərar verir</b><span>Dövlət qurumlarının nümayəndələri meyarlar üzrə qiymətləndirir və səs verir</span></li>
+        <li><span class="fs-ico"><svg class="i"><use href="/img/icons.svg#i-stamp"></use></svg></span><b>İcarə müqaviləsi</b><span>Qalib torpağı icarəyə götürür, investisiya və iş yeri öhdəliyi alır</span></li>
+        <li><span class="fs-ico"><svg class="i"><use href="/img/icons.svg#i-satellite"></use></svg></span><b>Peyk və EKTİS nəzarəti</b><span>Öhdəliklərin icrası peykdən və dövlət reyestrindən izlənir</span></li>
+      </ol>
+      <div class="off-strip" id="officialStrip"></div>
+      <div class="section-title" style="margin-top:34px">
+        <div><span class="overline">Platformanın dəyəri</span><h2>Torpaq satmırıq: müraciət edən tərəfləri birləşdiririk</h2></div>
+        <p>Siyahı deyil, bazar: hər tərəf digərinin dilində danışır. Rəqəmlər iddia yox, simulyasiya ilə yoxlanılmış ehtimaldır.</p>
+      </div>
+      <div class="sides">
+        <div class="side-card">
+          <span class="side-ico" style="background:#fff6dc;color:#8a6200"><svg class="i"><use href="/img/icons.svg#i-coins"></use></svg></span>
+          <span class="overline">İnvestor</span><h3>"Pulum var, haraya qoyum?"</h3>
+          <ul><li>AI məsləhətçi kəndlinin dilini pul dilinə çevirir</li><li>Layihələr profilinizə görə uyğunluq faizi ilə</li><li>Hər təklif pis, orta və yaxşı ssenaridə: nə vaxt, nə qədər qayıdır</li></ul>
+          <div class="row-wrap" style="gap:8px"><a class="btn btn-gold btn-sm" href="/meslehetci.html"><svg class="i i-sm"><use href="/img/icons.svg#i-bot"></use></svg>AI-dan soruş</a><a class="btn btn-sm" href="/layiheler.html#profile">Mənə uyğun layihələr</a></div>
+        </div>
+        <div class="side-card">
+          <span class="side-ico"><svg class="i"><use href="/img/icons.svg#i-lightbulb"></use></svg></span>
+          <span class="overline">Sahibkar</span><h3>"İdeyam var, investor lazımdır"</h3>
+          <ul><li>İdeyanı rəqəmlərlə ifadə edən strukturlaşdırılmış təqdimat</li><li>Canlı reallıq yoxlaması: iddialar 1500 ssenari ilə yoxlanılır</li><li>"Bu torpaqda nə etmək olar?": şoran torpaq günəş üçün 100 bal</li></ul>
+          <div class="row-wrap" style="gap:8px"><a class="btn btn-primary btn-sm" href="/layihe-yeni.html"><svg class="i i-sm"><use href="/img/icons.svg#i-plus"></use></svg>Layihə təqdim et</a><a class="btn btn-sm" href="/simulyator.html">Gələcək simulyatoru</a></div>
+        </div>
+        <div class="side-card">
+          <span class="side-ico" style="background:#e8f1fc;color:#1c5cab"><svg class="i"><use href="/img/icons.svg#i-hand-coins"></use></svg></span>
+          <span class="overline">Alıcı</span><h3>"Xammal lazımdır, kimdən alım?"</h3>
+          <ul><li>Nazirliyin yoxladığı "təsdiqlənmiş tələb"</li><li>Sahələrlə məhsul, məsafə və həcm üzrə uyğunlaşdırma</li><li>Niyyət məktubu müraciətə əlavə olunur, fermerin qiymət riski azalır</li></ul>
+          <div class="row-wrap" style="gap:8px"><a class="btn btn-sm" href="/alicilar.html" style="--b-bg:#1c5cab;--b-ink:#fff;--b-line:#1c5cab"><svg class="i i-sm"><use href="/img/icons.svg#i-hand-coins"></use></svg>Alıcılar</a></div>
+        </div>
+      </div>
+      <div class="kpis" id="marketKpis" style="margin-top:18px"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <div><span class="overline">Necə işləyir</span><h2>Sahədən müqaviləyə qədər 4 addım</h2></div>
+        <p>Kağız sənəd, növbə və qeyri-müəyyənlik yoxdur - bütün proses bir portalda, şəffaf meyarlarla.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="n"><svg class="i i-lg"><use href="/img/icons.svg#i-map"></use></svg></div><h3>Sahəni seçin</h3><p>İnteraktiv xəritə və kataloqda sahələri təyinat, ölçü, infrastruktur və minatəmizləmə statusuna görə süzün.</p></div>
+        <div class="step"><div class="n"><svg class="i i-lg"><use href="/img/icons.svg#i-file-text"></use></svg></div><h3>Elektron müraciət edin</h3><p>Addım-addım forma: sahibkar məlumatları, investisiya planı, sənədlər. Qaralama avtomatik yadda saxlanılır.</p></div>
+        <div class="step"><div class="n"><svg class="i i-lg"><use href="/img/icons.svg#i-activity"></use></svg></div><h3>Statusu izləyin</h3><p>Müraciət nömrəsi, izləmə kodu və QR ilə - "Qəbul edilib", "Baxılır", "Əlavə məlumat", "Qərar verilib".</p></div>
+        <div class="step"><div class="n"><svg class="i i-lg"><use href="/img/icons.svg#i-network"></use></svg></div><h3>Qərar və EKTİS</h3><p>Qaliblər avtomatik olaraq Kənd Təsərrüfatı Nazirliyinin EKTİS sisteminə ötürülür.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="section-title">
+        <div><span class="overline">İnvestorun dörd qorxusuna dörd cavab</span><h2>Riski görmək, bölmək, nəzarət etmək</h2></div>
+        <p>"Quraqlıq olsa?", "Pulu verdim, işləməsələr?", "Rəqəmlərə necə inanım?", "Bu, region üçün nə verir?" Hər sualın cavabı rəqəmlə.</p>
+      </div>
+      <div class="tool-tiles">
+        <a class="tool-tile" href="/portfel.html"><span class="tt-ico"><svg class="i i-lg"><use href="/img/icons.svg#i-chart-pie"></use></svg></span><span class="tt-new">yeni</span><h3>Portfel qurucusu</h3><p>Büdcəni 50+ torpaq variantı arasında bölür. Quraqlıq, qiymət və turizm riskləri ortaq ssenarilərdə hesablanır, səmərəli sərhəd və stress test göstərilir.</p><b>Büdcəmi böl <svg class="i i-sm"><use href="/img/icons.svg#i-arrow-right"></use></svg></b></a>
+        <a class="tool-tile" href="/layihe.html?id=8"><span class="tt-ico"><svg class="i i-lg"><use href="/img/icons.svg#i-satellite"></use></svg></span><span class="tt-new">yeni</span><h3>Peyk təsdiqli ödəniş</h3><p>Pul escrow hesabında qalır, mərhələ-mərhələ ödənilir. Landsat NDVI işi yoxlayır, qonşu sahələrlə müqayisə hava effektini çıxarır.</p><b>Nümunəyə bax <svg class="i i-sm"><use href="/img/icons.svg#i-arrow-right"></use></svg></b></a>
+        <a class="tool-tile" href="/memo.html?id=6"><span class="tt-ico"><svg class="i i-lg"><use href="/img/icons.svg#i-file-text"></use></svg></span><span class="tt-new">yeni</span><h3>AI investisiya memorandumu</h3><p>Hər layihə üçün bank formatında bir səhifə: Monte-Carlo, reallıq yoxlaması, risklər və tövsiyə. İcmalı Əkinçi AI yazır, rəqəmlər platformadandır.</p><b>PDF-ə bax <svg class="i i-sm"><use href="/img/icons.svg#i-arrow-right"></use></svg></b></a>
+        <a class="tool-tile" href="/regionlar.html"><span class="tt-ico"><svg class="i i-lg"><use href="/img/icons.svg#i-landmark"></use></svg></span><span class="tt-new">yeni</span><h3>Böyük Qayıdış paneli</h3><p>Rayon-rayon potensial investisiya, daimi iş yerləri, qayıdan ailələr və investisiyaya hazırlıq indeksi: növbəti müsabiqə harada olmalıdır?</p><b>Rayonlara bax <svg class="i i-sm"><use href="/img/icons.svg#i-arrow-right"></use></svg></b></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:linear-gradient(180deg,#0b3d27,#062b1c);color:#fff">
+    <div class="container" style="display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;align-items:center" id="tmSection">
+      <div>
+        <span class="overline" style="color:#9fe0b5">Real peyk arxivi · 1990-2026</span>
+        <h2 style="color:#fff;font-size:clamp(26px,3.4vw,40px)">Torpağın zaman maşını</h2>
+        <p style="color:#cfe5d7;font-size:16.5px">Hər sahə üçün eyni ərazinin 35 illik peyk şəkilləri: işğaldan əvvəl becərilən torpaq, işğal illərində boş qalan sahələr və bu gün - dirçəliş. İnvestor torpağın keçmişini görür və onun potensialını daha yaxşı anlayır.</p>
+        <ul style="list-style:none;padding:0;margin:18px 0;display:flex;flex-direction:column;gap:10px;color:#e3f1e8">
+          <li><svg class="i"><use href="/img/icons.svg#i-satellite"></use></svg> Landsat 1990, 2000, 2010 (USGS/NASA), Sentinel-2 2018 və 2025 (Copernicus) və avtomatik yenilənən son Sentinel-2 çəkilişi</li>
+          <li><svg class="i"><use href="/img/icons.svg#i-sprout"></use></svg> 1990-cı ildən bu günə sahə üzrə bitki örtüyü indeksi (NDVI)</li>
+          <li><svg class="i"><use href="/img/icons.svg#i-shield-check"></use></svg> İcarədən sonra peykdən nəzarət: torpaq təyinatı üzrə istifadə olunurmu?</li>
+        </ul>
+        <a class="btn btn-gold" id="tmLink" href="/kataloq.html"><svg class="i"><use href="/img/icons.svg#i-satellite"></use></svg>Sahənin tarixçəsinə bax</a>
+      </div>
+      <div class="card card-pad" style="color:var(--ink-900)" id="tmHome"><div class="loader"></div></div>
+    </div>
+  </section>
+
+  <section class="section" style="background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+    <div class="container">
+      <div class="section-title">
+        <div><span class="overline">Aktiv müsabiqələr</span><h2>Müraciət qəbulu davam edir</h2></div>
+        <a class="btn" href="/musabiqeler.html">Bütün müsabiqələr <svg class="i i-sm"><use href="/img/icons.svg#i-arrow-right"></use></svg></a>
+      </div>
+      <div class="grid grid-2" id="activeComps"><div class="loader"></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title">
+        <div><span class="overline">Seçilmiş sahələr</span><h2>Ən yüksək infrastruktur indeksi olan sahələr</h2></div>
+        <a class="btn" href="/kataloq.html">Kataloqa keç <svg class="i i-sm"><use href="/img/icons.svg#i-arrow-right"></use></svg></a>
+      </div>
+      <div class="plot-grid" id="featured"><div class="loader"></div></div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="section-title"><div><span class="overline">Rayonlar</span><h2>11 azad edilmiş rayon üzrə sahələr</h2></div></div>
+      <div class="row-wrap" id="districts"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-title"><div><span class="overline">Niyə Əkinçi 2.0</span><h2>Investor üçün aydın, dövlət üçün idarəolunan</h2></div></div>
+      <div class="grid grid-3">
+        <div class="feature"><div class="ic"><svg class="i i-lg"><use href="/img/icons.svg#i-sparkles"></use></svg></div><h3>Ağıllı tövsiyə sistemi</h3><p>Büdcənizə, fəaliyyət istiqamətinizə və infrastruktur tələblərinizə görə sahələr izahlı uyğunluq balı ilə sıralanır.</p></div>
+        <div class="feature"><div class="ic"><svg class="i i-lg"><use href="/img/icons.svg#i-trending-up"></use></svg></div><h3>Gəlirlilik kalkulyatoru</h3><p>Hər sahə üçün 10 illik pul axını, geri ödəmə müddəti və ROI proqnozu - torpağın keyfiyyəti və suvarma nəzərə alınır.</p></div>
+        <div class="feature"><div class="ic"><svg class="i i-lg"><use href="/img/icons.svg#i-shield-check"></use></svg></div><h3>Minatəmizləmə şəffaflığı</h3><p>Hər sahədə ANAMA sertifikatı və texniki sorğu statusu açıq göstərilir - investorun ilk sualına ilk cavab.</p></div>
+        <div class="feature"><div class="ic"><svg class="i i-lg"><use href="/img/icons.svg#i-scale"></use></svg></div><h3>Şəffaf qiymətləndirmə</h3><p>Meyarlar və çəkilər əvvəlcədən elan olunur; avtomatik ilkin bal izahlıdır, yekun qərarı komissiya verir.</p></div>
+        <div class="feature"><div class="ic"><svg class="i i-lg"><use href="/img/icons.svg#i-network"></use></svg></div><h3>EKTİS-ə hazır arxitektura</h3><p>Versiyalaşdırılmış REST API, GeoJSON, imzalı hadisələr (HMAC), idempotentlik və təkrar cəhd mexanizmi.</p></div>
+        <div class="feature"><div class="ic"><svg class="i i-lg"><use href="/img/icons.svg#i-lock"></use></svg></div><h3>Məlumat təhlükəsizliyi</h3><p>Rol əsaslı giriş, JWT, şifrələrin BCrypt ilə saxlanması, audit jurnalı və şəxsi məlumatların maskalanması.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <div class="card card-pad" style="background:linear-gradient(135deg,var(--green-900),var(--green-700));color:#fff;border:0;display:flex;gap:24px;align-items:center;justify-content:space-between;flex-wrap:wrap">
+        <div><h2 style="color:#fff;margin-bottom:6px">Qarabağın dirçəlişində iştirak edin</h2><p style="color:#cfe5d7;margin:0">Qeydiyyatdan keçin və 5 dəqiqəyə ilk müraciətinizi hazırlayın.</p></div>
+        <div class="row-wrap"><a class="btn btn-gold btn-lg" href="/qeydiyyat.html">Qeydiyyatdan keç</a><a class="btn btn-light btn-lg" href="/izle.html">Müraciətin statusu</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="/vendor/chart.umd.js"></script>
+<script type="module" src="/js/pages/home.js"></script>
+</body>
+</html>

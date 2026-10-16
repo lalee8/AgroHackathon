@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="az">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gələcək simulyatoru - Əkinçi 2.0</title>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Əkinçi 2.0">
+  <meta property="og:title" content="Gələcək simulyatoru - Əkinçi 2.0">
+  <meta property="og:description" content="Azad edilmiş ərazilərdə kənd təsərrüfatı təyinatlı torpaqlar üzrə investisiya müsabiqələri: xəritə, peyk monitorinqi, fəaliyyət planı və elektron müraciət.">
+  <meta property="og:image" content="https://aqrohacathon-production.up.railway.app/img/og.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <script src="/js/lang-boot.js"></script>
+  <link rel="icon" href="/img/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<main>
+  <section class="sim-hero"><div class="container">
+    <div class="crumbs"><a href="/index.html">Ana səhifə</a> / Gələcək simulyatoru</div>
+    <span class="overline" style="color:#f3d27a">Monte-Carlo · 2000 mümkün gələcək</span>
+    <h1>Fermanın gələcəyini 30 saniyədə yaşa</h1>
+    <p>Torpağı və fəaliyyəti seçin, müddət istiqamətə görə təyin olunur (taxıl və ferma 10 il, bağ və istixana 15 il, günəş stansiyası 25 il), istəsəniz dəyişin: quraqlıq, şaxta, xəstəlik, qiymət və xərclərin 2000 birləşməsi hesablanır. Nəticə tək rəqəm deyil: pis (P10), orta (P50) və yaxşı (P90) ssenari, geri qayıtma ehtimalı və əsas risklər.</p>
+  </div></section>
+  <section class="section-sm">
+    <div class="container sim-layout">
+      <aside class="card card-pad sim-controls" id="controls"><div class="loader"></div></aside>
+      <div class="sim-main">
+        <div class="card sim-stage" id="stage"></div>
+        <div id="after" class="stack"></div>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="/vendor/chart.umd.js"></script>
+<script type="module" src="/js/pages/simulator.js"></script>
+</body>
+</html>

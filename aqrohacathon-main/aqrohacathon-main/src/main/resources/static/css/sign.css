@@ -1,0 +1,29 @@
+.sign-body { background: #e9ece6; }
+.sign-tools { display: flex; gap: 10px; justify-content: center; padding: 16px; }
+.sign { width: 210mm; min-height: 297mm; margin: 0 auto 30px; background: #fff; box-shadow: var(--shadow-lg); display: flex; flex-direction: column; overflow: hidden; }
+.sign-top { background: linear-gradient(135deg, #0b3d27, #17693f); color: #fff; padding: 14mm 14mm 10mm; position: relative; }
+.sign-top::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: linear-gradient(90deg, #00b5e2 0 33.3%, #ef3340 33.3% 66.6%, #509e2f 66.6%); }
+.sign-top .brand { color: #fff; font-size: 20px; }
+.sign-top .brand small { color: #cfe5d7; }
+.sign-top h1 { color: #fff; font-size: 30pt; margin: 8mm 0 2mm; line-height: 1.05; }
+.sign-top .kicker { font-size: 13pt; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #f5d36b; }
+.sign-mid { padding: 10mm 14mm; display: grid; grid-template-columns: 1fr 78mm; gap: 10mm; flex: 1; }
+.sign-code { font-size: 54pt; font-weight: 900; letter-spacing: -.02em; line-height: 1; color: #0b3d27; font-variant-numeric: tabular-nums; }
+.sign-facts { margin-top: 8mm; display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+.sign-facts div { border: 1.5px solid #dfe5dc; border-radius: 4mm; padding: 3mm 4mm; }
+.sign-facts span { display: block; font-size: 9.5pt; color: #5a6860; font-weight: 600; }
+.sign-facts b { font-size: 16pt; }
+.sign-qr { border: 2px solid #0b3d27; border-radius: 6mm; padding: 6mm; text-align: center; align-self: start; }
+.sign-qr svg, .sign-qr img { width: 64mm; height: 64mm; display: block; margin: 0 auto; }
+.sign-qr b { display: block; font-size: 15pt; margin-top: 4mm; color: #0b3d27; }
+.sign-qr small { display: block; font-size: 9pt; color: #5a6860; margin-top: 1mm; word-break: break-all; }
+.sign-demining { margin-top: 6mm; display: flex; gap: 3mm; align-items: center; background: #e7f6e7; color: #0b6b0b; border-radius: 4mm; padding: 4mm 5mm; font-weight: 700; font-size: 12pt; }
+.sign-bottom { padding: 6mm 14mm 10mm; border-top: 1.5px solid #dfe5dc; display: flex; justify-content: space-between; gap: 8mm; font-size: 10pt; color: #5a6860; }
+.sign-bottom b { color: #111a14; }
+@media print {
+  @page { size: A4; margin: 0; }
+  .sign-body { background: #fff; }
+  .sign { box-shadow: none; margin: 0; width: 210mm; height: 297mm; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+@media screen and (max-width: 820px) { .sign { width: 100%; min-height: 0; } .sign-mid { grid-template-columns: 1fr; } }
